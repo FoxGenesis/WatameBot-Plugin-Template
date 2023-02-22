@@ -1,46 +1,53 @@
 package my.plugin;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import java.util.Collection;
+import java.util.Properties;
+import java.util.Set;
 
+import org.apache.commons.configuration2.PropertiesConfiguration;
+
+import net.dv8tion.jda.api.interactions.commands.build.CommandData;
+import net.foxgenesis.watame.ProtectedJDABuilder;
 import net.foxgenesis.watame.WatameBot;
-import net.foxgenesis.watame.WatameBot.ProtectedJDABuilder;
-import net.foxgenesis.watame.plugin.IPlugin;
-import net.foxgenesis.watame.plugin.PluginProperties;
+import net.foxgenesis.watame.plugin.Plugin;
 
 /**
- * @author
+ * @author Ashley
  *
  */
-@PluginProperties(name = "", description = "", version = "0.0.0", providesCommands = false)
-public class PluginTemplate implements IPlugin {
-	/**
-	 * Logger
-	 */
-	private static final Logger logger = LoggerFactory.getLogger("PluginTemplate");
-	
-	@Override
-	public void preInit() { 
-		// TODO Auto-generated method stub
-	 }
+public class PluginTemplate extends Plugin {
 
 	@Override
-	public void init(ProtectedJDABuilder builder) { 
-		// TODO Auto-generated method stub
-	 }
+	protected void onPropertiesLoaded(Properties properties) {}
 
 	@Override
-	public void postInit(WatameBot bot) { 
-		// TODO Auto-generated method stub
-	 }
+	protected void onConfigurationLoaded(String identifier, PropertiesConfiguration properties) {}
 
 	@Override
-	public void onReady(WatameBot bot) { 
-		// TODO Auto-generated method stub
-	 }
-	
+	public void preInit() {
+
+	}
+
 	@Override
-	public void close() throws Exception { 
-		// TODO Auto-generated method stub
-	 }
+	public void init(ProtectedJDABuilder builder) {
+
+	}
+
+	@Override
+	public void postInit(WatameBot bot) {
+
+	}
+
+	@Override
+	public void onReady(WatameBot bot) {
+
+	}
+
+	@Override
+	public void close() throws Exception {
+
+	}
+
+	@Override
+	public Collection<CommandData> getCommands() { return Set.of(); }
 }

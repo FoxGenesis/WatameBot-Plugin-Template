@@ -1,10 +1,10 @@
 /**
  * @author 
  *
- * @provides net.foxgenesis.watame.plugin.IPlugin
+ * @provides net.foxgenesis.watame.plugin.Plugin
  */
 module pluginTemplate {
 	requires watamebot;
 
-	provides net.foxgenesis.watame.plugin.IPlugin with my.plugin.PluginTemplate;
+	provides net.foxgenesis.watame.plugin.Plugin with my.plugin.PluginTemplate;
 }
