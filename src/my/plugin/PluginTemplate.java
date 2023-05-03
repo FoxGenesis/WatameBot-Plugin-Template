@@ -4,12 +4,13 @@ import java.util.Collection;
 import java.util.Properties;
 import java.util.Set;
 
-import org.apache.commons.configuration2.PropertiesConfiguration;
+import org.apache.commons.configuration2.Configuration;
 
 import net.dv8tion.jda.api.interactions.commands.build.CommandData;
-import net.foxgenesis.watame.ProtectedJDABuilder;
 import net.foxgenesis.watame.WatameBot;
+import net.foxgenesis.watame.plugin.IEventStore;
 import net.foxgenesis.watame.plugin.Plugin;
+import net.foxgenesis.watame.plugin.SeverePluginException;
 
 /**
  * @author Ashley
@@ -21,7 +22,7 @@ public class PluginTemplate extends Plugin {
 	protected void onPropertiesLoaded(Properties properties) {}
 
 	@Override
-	protected void onConfigurationLoaded(String identifier, PropertiesConfiguration properties) {}
+	protected void onConfigurationLoaded(String identifier, Configuration config) {}
 
 	@Override
 	public void preInit() {
@@ -29,7 +30,8 @@ public class PluginTemplate extends Plugin {
 	}
 
 	@Override
-	public void init(ProtectedJDABuilder builder) {
+	protected void init(IEventStore eventStore) throws SeverePluginException {
+		// TODO Auto-generated method stub
 
 	}
 
@@ -49,5 +51,7 @@ public class PluginTemplate extends Plugin {
 	}
 
 	@Override
-	public Collection<CommandData> getCommands() { return Set.of(); }
+	public Collection<CommandData> getCommands() {
+		return Set.of();
+	}
 }
