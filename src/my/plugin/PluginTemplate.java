@@ -1,49 +1,37 @@
 package my.plugin;
 
 import java.util.Collection;
+import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
+
+import net.foxgenesis.watame.WatameBot;
+import net.foxgenesis.watame.plugin.CommandProvider;
+import net.foxgenesis.watame.plugin.IEventStore;
+import net.foxgenesis.watame.plugin.Plugin;
+import net.foxgenesis.watame.plugin.SeverePluginException;
 
 import org.apache.commons.configuration2.Configuration;
 
 import net.dv8tion.jda.api.interactions.commands.build.CommandData;
-import net.foxgenesis.watame.WatameBot;
-import net.foxgenesis.watame.plugin.IEventStore;
-import net.foxgenesis.watame.plugin.Plugin;
-import net.foxgenesis.watame.plugin.SeverePluginException;
 
 /**
  * @author Ashley
  *
  */
-public class PluginTemplate extends Plugin {
+public class PluginTemplate extends Plugin implements CommandProvider {
 
 	@Override
-	protected void onPropertiesLoaded(Properties properties) {}
+	public void preInit() {}
 
 	@Override
-	protected void onConfigurationLoaded(String identifier, Configuration config) {}
+	protected void init(IEventStore eventStore) throws SeverePluginException {}
 
 	@Override
-	public void preInit() {
-
-	}
+	public void postInit(WatameBot bot) {}
 
 	@Override
-	protected void init(IEventStore eventStore) throws SeverePluginException {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void postInit(WatameBot bot) {
-
-	}
-
-	@Override
-	public void onReady(WatameBot bot) {
-
-	}
+	public void onReady(WatameBot bot) {}
 
 	@Override
 	public void close() throws Exception {
@@ -54,4 +42,7 @@ public class PluginTemplate extends Plugin {
 	public Collection<CommandData> getCommands() {
 		return Set.of();
 	}
+
+	@Override
+	protected void onConstruct(Properties meta, Map<String, Configuration> configs) {}
 }
