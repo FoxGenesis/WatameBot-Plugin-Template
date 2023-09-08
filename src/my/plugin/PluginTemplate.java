@@ -3,10 +3,9 @@ package my.plugin;
 import java.util.Collection;
 import java.util.Set;
 
-import net.foxgenesis.watame.WatameBot;
-import net.foxgenesis.watame.plugin.CommandProvider;
 import net.foxgenesis.watame.plugin.IEventStore;
 import net.foxgenesis.watame.plugin.Plugin;
+import net.foxgenesis.watame.plugin.require.CommandProvider;
 
 import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 
@@ -42,13 +41,13 @@ public class PluginTemplate extends Plugin implements CommandProvider {
 	}
 
 	@Override
-	public void postInit(WatameBot bot) {
+	public void postInit() {
 		// Initialization cleanup
 		// Unload unneeded resources
 	}
 
 	@Override
-	public void onReady(WatameBot bot) {
+	public void onReady() {
 		// Called after all plugins have finished post initialization and we are
 		// connected to discord
 	}
